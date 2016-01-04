@@ -1,0 +1,54 @@
+/* 
+1, 2, Fizz,
+4, Buzz,
+Fizz, 
+7, 8, Fizz, 
+Buzz, 
+11, Fizz, 
+13, 14, 
+Fizz Buzz, 16, 17, Fizz, 19, Buzz, Fizz, 22, 23, Fizz, Buzz, 26, Fizz, 28, 29, Fizz Buzz, 31, 32, Fizz, 34, Buzz, Fizz 
+*/
+
+@import 'normalize';
+
+body{
+	counter-reset: fizz-buzz-counter 0;
+	width: 100%;
+	color: #1B325F;
+	.container{
+		margin: 0px auto;
+		max-width: 970px;
+	}
+}
+div.fizzing{
+	counter-increment: fizz-buzz-counter;
+	display: inline-block;
+	margin-right: 30px;
+	margin-bottom: 12px;
+}
+div.fizzing:after {
+	content: counter(fizz-buzz-counter);
+	display: block; 
+}
+div.fizzing:nth-child(3n+4):after{
+	content: 'FIZZ';
+	color: #3A89C9;
+	font-weight: bold;
+	font-style: italic;
+}
+div.fizzing:nth-child(5n+6):after{
+	content: 'BUZZ';
+	color: #F26C4F;
+	font-weight: bold;
+	font-style: italic;
+}
+div.fizzing:nth-child(15n+16):after{
+	content: 'FIZZ BUZZ';
+	color: #8FD35B;
+	font-weight: bold;
+	font-style: italic;
+}
+// div.fizzing:first-child:before{
+// 	content: "1";
+// 	display: block; 
+// }
